@@ -1,0 +1,16 @@
+CREATE TABLE Games
+(
+    GameID      INTEGER PRIMARY KEY AUTOINCREMENT,
+    Title       TEXT NOT NULL,
+    Genre       TEXT NOT NULL,
+    ReleaseYear INTEGER
+);
+
+CREATE TABLE Players
+(
+    PlayerID  INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name      TEXT NOT NULL,
+    HighScore INTEGER,
+    GameID    INTEGER,
+    FOREIGN KEY (GameID) REFERENCES Games (GameID)
+);
